@@ -1,2 +1,2 @@
-Welcome to shell basics
+Welcome to shell basics.
 
