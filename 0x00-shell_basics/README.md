@@ -1,2 +1,2 @@
-Bash script to print to the working directory
+Welcome to shell basics
 
