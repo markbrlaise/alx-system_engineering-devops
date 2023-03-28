@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fixing a broken apache server to return Hello Holberton
+
+sudo etc/init.d/apache2 start
