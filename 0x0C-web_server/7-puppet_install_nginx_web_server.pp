@@ -2,7 +2,6 @@
 
 package { 'nginx':
   ensure => 'installed',
-  require => Exec['update system'],
 }
 
 file { 'index.html':
@@ -20,5 +19,4 @@ file_line { '# yyyyyy':
 
 service { 'nginx':
   ensure  => 'running',
-  require => Package['nginx'],
 }
