@@ -2,6 +2,7 @@
 
 package { 'nginx':
   ensure => 'installed',
+  require => Exec['update system'],
 }
 
 file { 'index.html':
