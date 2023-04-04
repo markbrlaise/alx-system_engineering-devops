@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# script to set up my new server
+
+# sudo -i & bash -c
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo 'Hello World!'>/var/www/html/index.nginx-debian.html
+sudo sed -i '24i\           rewrite ^/redirect_me https://markbrlaise.github.io/ permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page">>/var/www/html/error_404.html
+sudo sed -i '25i\           error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+sudo sed -i '26i\           add_header X-Served-By \$hostname;' /etc/nginx/sites-available/default
+sudo nginx -t
+sudo /etc/init.d/nginx restart
+
