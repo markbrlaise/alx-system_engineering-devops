@@ -2,4 +2,3 @@
 # configuring nginx server to listen on port 80
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 kill "$(pgrep 'nginx' | head -1)"
-service nginx restart
